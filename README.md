@@ -7,7 +7,7 @@ Script for data processing of measurement replicates (calculating average and st
 ____________________________
 
 ## README Contents
-- Before having fun with **Anaconda/Spyder**... | [GO](#before-having-fun-with-anaconda-spyder)
+- Before having fun with **Anaconda/Spyder**... | [GO](#before-having-fun-with-anacondaspyder)
     - Anaconda Python installation | [GO](#gear-anaconda-python-installation)
     - Anaconda Navigator | [GO](#anaconda-navigator)
     - Anaconda Prompt or Terminal | [GO](#anaconda-prompt-or-terminal)
