@@ -15,13 +15,14 @@ ____________________________
     - Python packages | [GO](#python-packages)
     - Installation of packages using Anaconda Navigator | [GO](#installation-of-packages-using-anaconda-navigator)
     - Installation of packages using pip | [GO](#installation-of-packages-using-pip)
-- Before having fun with **Jupyter**... | [GO](#before-having-fun-with-jupyter)
+- Before having fun with **Jupyter Notebook**... | [GO](#before-having-fun-with-jupyter-notebook)
+- Before having fun with **JupyterLab**... | [GO](#before-having-fun-with-jupyterlab)
 ____________________________
 
 ## Before having fun with **Anaconda/Spyder**...
 
 ### :gear: Anaconda Python installation
-This script is built up in Python. To execute this script in Python is recommended the installation of **Anaconda**. **Anaconda Python** is a free, open-source platform that allows to write and execute code in the programming language Python ([Python Tutorial](https://docs.python.org/3/tutorial/index.html)). This platform simplifies package installation, managment and development, and alos comes with a large number of libraries/packages that can be you for your projects. To install **Anaconda**, just head to the [Anaconda Documentation website](https://docs.anaconda.com/free/anaconda/install/index.html) and follow the instructions to download teh installer for your operating system.
+This script is built up in Python. You can execute this script in Python with **Anaconda**. **Anaconda Python** is a free, open-source platform that allows to write and execute code in the programming language Python ([Python Tutorial](https://docs.python.org/3/tutorial/index.html)). This platform simplifies package installation, managment and development, and alos comes with a large number of libraries/packages that can be you for your projects. To install **Anaconda**, just head to the [Anaconda Documentation website](https://docs.anaconda.com/free/anaconda/install/index.html) and follow the instructions to download teh installer for your operating system.
 
 [🔼 Back to **Contents**](#readme-contents)
 
@@ -86,7 +87,24 @@ python -m pip install matplotlib
 
 [🔼 Back to **Contents**](#readme-contents)
 
-## Before having fun with **Jupyter**...
+____________________________
+
+## Before having fun with **Jupyter Notebook**...
+
+### :gear: Jupyter Notebook installation
+This script is built up in Python. You can execute this script in Python with **Anaconda**. **Anaconda Python** is a free, open-source platform that allows to write and execute code in the programming language Python ([Python Tutorial](https://docs.python.org/3/tutorial/index.html)). This platform simplifies package installation, managment and development, and alos comes with a large number of libraries/packages that can be you for your projects. To install **Anaconda**, just head to the [Anaconda Documentation website](https://docs.anaconda.com/free/anaconda/install/index.html) and follow the instructions to download teh installer for your operating system.
+
+[🔼 Back to **Contents**](#readme-contents)
 
 ____________________________
+
+## Before having fun with **JupyterLab**...
+
+### :gear: JupyterLab installation
+This script is built up in Python. You can execute this script in Python with **Anaconda**. **Anaconda Python** is a free, open-source platform that allows to write and execute code in the programming language Python ([Python Tutorial](https://docs.python.org/3/tutorial/index.html)). This platform simplifies package installation, managment and development, and alos comes with a large number of libraries/packages that can be you for your projects. To install **Anaconda**, just head to the [Anaconda Documentation website](https://docs.anaconda.com/free/anaconda/install/index.html) and follow the instructions to download teh installer for your operating system.
+
+[🔼 Back to **Contents**](#readme-contents)
+
+____________________________
+
 
