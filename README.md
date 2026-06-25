@@ -24,7 +24,7 @@ ____________________________
     - JupyterLab installation | [GO](#gear-jupyterlab-installation)
         - Installing JupyterLab with pip | [GO](#installing-jupyterlab-with-pip)
 
-· **Dowloading and setting up:**
+· **Dowloading and data formating:**
 - Instructions for downloading and setting up data_processing script | [GO](#clipboard-instructions-for-downloading-and-setting-up-data_processing-script)
     - Data formating instructions | [GO](#data-formating-instructions)
 
