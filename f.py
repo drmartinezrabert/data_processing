@@ -26,7 +26,7 @@ class Data_processing:
                           var2 = None, var2_label = None, var2_color = '#d2554a', show_legend = True, legend_orientation = 'horizontal', 
                           xlim = [None, None], ylim_var1 = [0, 27], ylim_var2 = [0, 13], ns_label = True, ns_label_fontsize = 9, save_fig = True,
                           x_ticker_format = "{x:.1f}", stats_dark_vs_light = True, stats_coefficient_of_variation = False, CV_method = 'RSD', 
-                          significant_difference_times = False, significant_difference_t0 = False):
+                          significant_difference_times = False, significant_difference_t0 = False, show_icon = False):
         """
         Function to process and do statistics of data from Folder `data/`.
 
@@ -94,6 +94,8 @@ class Data_processing:
             Calculate and show in plot significant differences between t_n and t_n+1. The default is False.
         significant_difference_t0 : BOOL, optional
             Calculate and show in plot significant differences between t_0 and t_n. The default is False.
+        show_icon : BOOL, optional
+            Set wheteher icons are shown in right-top of plots. The default is False.
 
         Returns
         -------
@@ -223,12 +225,13 @@ class Data_processing:
                 count = int(descr[measurement_by_type[iType][0]]['count'].unique()[0])
                 title = f'{sample_id} ({iType}) | n = {count}'
                 full_path_figsave = Data_processing.path_save + f'{sample_id}_{condition}_{iType}.tiff'
-                if condition == 'Light':
-                    icon = mpimg.imread('data/light_icon.png')
-                    zoom = 0.060
-                elif condition == 'Dark':
-                    icon = mpimg.imread('data/dark_icon.png')
-                    zoom = 0.085
+                if show_icon:
+                    if condition == 'Light':
+                        icon = mpimg.imread('data/light_icon.png')
+                        zoom = 0.060
+                    elif condition == 'Dark':
+                        icon = mpimg.imread('data/dark_icon.png')
+                        zoom = 0.085
                 #-Plotting
                 x_formatter = ticker.StrMethodFormatter(x_ticker_format)
                 fig, ax1 = plt.subplots()
@@ -253,13 +256,14 @@ class Data_processing:
                             if not id_time == 0:
                                 ax1.text(time, ylim_var1[1]*y_plus_text[id_meas], pval_array[id_time], ha = 'center', 
                                          fontfamily = 'Arial', c = var1_colors[iType][id_meas], weight = 650, fontsize = ns_label_fontsize)
-                imagebox = OffsetImage(icon, zoom = zoom)
-                if not xlim[1]:
-                    x_icon = max(x)*0.98
-                else:
-                    x_icon = xlim[1]*0.93
-                ab = AnnotationBbox(imagebox, (x_icon, ylim_var1[1]*0.91), frameon = False)
-                ax1.add_artist(ab)
+                if show_icon:
+                    imagebox = OffsetImage(icon, zoom = zoom)
+                    if not xlim[1]:
+                        x_icon = max(x)*0.98
+                    else:
+                        x_icon = xlim[1]*0.93
+                    ab = AnnotationBbox(imagebox, (x_icon, ylim_var1[1]*0.91), frameon = False)
+                    ax1.add_artist(ab)
                 if significant_difference_times or significant_difference_t0:
                     plt.title(title, y = y_plus_text[0]*1.04, weight = 650)
                 else:
