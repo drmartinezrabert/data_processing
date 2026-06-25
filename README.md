@@ -156,7 +156,7 @@ pip3 install jupyterlab
 ____________________________
 
 ## :clipboard: Instructions for downloading and setting up data_processing script
-1. Download .zip code. Last version: `v1.0.0`. [Download release]([https://github.com/](https://github.com/drmartinezrabert/data_processing/archive/refs/tags/v1.0.0.zip).
+1. Download .zip code. Last version: `v1.0.0`. [Download release](https://github.com/drmartinezrabert/data_processing/archive/refs/tags/v1.0.0.zip).
 2. Extract files to a destination (Recommendation - Desktop).
 3. Open extracted files and copy data  to be processed (format `.csv`) into Folder `data_processing-1.0.0/data/`.
 4. Execute script via Spyder (see [Instruction to use data_processing via Spyder](#clipboard-instruction-for-use-data_processing-via-spyder) section), Jupyter Notebook (see [Instruction to use data_processing via Jupyter Notebook](#clipboard-instruction-for-use-data_processing-via-jupyter-notebook) section) or JupyterLab (see [Instruction to use data_processing via JupyterLab](#clipboard-instruction-for-use-data_processing-via-jupyterlab) section).
