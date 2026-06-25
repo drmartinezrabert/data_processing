@@ -28,10 +28,10 @@ ____________________________
 - Instructions for downloading and setting up data_processing script | [GO](#clipboard-instructions-for-downloading-and-setting-up-data_processing-script)
     - Data formating instructions | [GO](#data-formating-instructions)
 
-· **Instruction of use:**
-- Instruction to use data_processing via Spyder | [GO](#clipboard-instruction-to-use-data_processing-via-spyder)
-- Instruction to use data_processing via Jupyter Notebook | [GO](#clipboard-instruction-to-use-data_processing-via-jupyter-notebook)
-- Instruction to use data_processing via JupyterLab | [GO](#clipboard-instruction-to-use-data_processing-via-jupyterlab)
+· **Instruction for use:**
+- Via Spyder | [GO](#clipboard-instruction-for-use-data_processing-via-spyder)
+- Via Jupyter Notebook | [GO](#clipboard-instruction-for-use-data_processing-via-jupyter-notebook)
+- Via JupyterLab | [GO](#clipboard-instruction-for-use-data_processing-via-jupyterlab)
 - Script guidelines | [GO](#script-guidelines)
     - Data_processing.process_and_stats | [GO](#data_processingprocess_and_stats)
 
@@ -117,7 +117,7 @@ This script is built up in Python. You can execute this script in Python with **
 #### Installing Jupyter using Anaconda and Conda
 1. Download [Anaconda](https://www.anaconda.com/download). We recommend downloading Anaconda’s latest Python 3 version (currently Python 3.9).
 2. Install the version of Anaconda which you downloaded, following the instructions on the download page.
-3. Run the notebook using Command Prompt (Windows/Mac) or Anaconda Prompt - [Run script with Jupyter Notebook](#).
+3. Run the notebook using Command Prompt (Windows/Mac) or Anaconda Prompt - [Run script with Jupyter Notebook](#clipboard-instruction-to-use-data_processing-via-jupyter-notebook).
 
 #### Installing Jupyter with pip
 As an exisiting Python user, you can install Jupyter using Python's pacakgae manager pip, instead of Anaconda. 
@@ -174,7 +174,7 @@ The script `data_processing` only reads files in `.csv` format. In it, some colu
 
 ____________________________
 
-## :clipboard: Instruction to use data_processing via Spyder
+## :clipboard: Instruction for use data_processing via Spyder
 1. Launch **Spyder**. For Spyder Tutorials, click [here](https://www.youtube.com/watch?v=E2Dap5SfXkI&list=PLPonohdiDqg9epClEcXoAPUiK0pN5eRoc&ab_channel=SpyderIDE).
 2. Set (at least) the following panes in Spyder (most are selected by default): `Files`, `Editor`, `IPython Console`, `Plots`, `Help`, `Historial`.
    From Spyder taskbar: <ins>V</ins>iew / Panes ▸.
@@ -187,7 +187,7 @@ ____________________________
 
 ____________________________
 
-## :clipboard: Instruction to use data_processing via Jupyter Notebook
+## :clipboard: Instruction for use data_processing via Jupyter Notebook
 1. Open **Anaconda Prompt** or **Command Prompt** of Windows/Mac.
 2. Go to the **Code folder<sup>2</sup>** using `cd` command (more info about [Using Terminal](https://docs.anaconda.com/ae-notebooks/user-guide/basic-tasks/apps/use-terminal/?highlight=Using%20Terminal)).
     &#09;<br><sup><sup>2</sup>Code folder: folder with `run_script_jupyter.ipynb` file (Folder: `data_processing-1.0.0`).</sup>
@@ -208,7 +208,7 @@ ____________________________
 
 ____________________________
 
-## :clipboard: Instruction to use data_processing via JupyterLab
+## :clipboard: Instruction for use data_processing via JupyterLab
 1. Open **Anaconda Prompt or Terminal**.
 2. Go to the **Code folder<sup>2</sup>** using `cd` command (more info about [Using Terminal](https://docs.anaconda.com/ae-notebooks/user-guide/basic-tasks/apps/use-terminal/?highlight=Using%20Terminal)).
     &#09;<br><sup><sup>2</sup>Code folder: folder with `run_script_jupyter.ipynb` file (Folder: `data_processing-1.0.0`). </sup>
