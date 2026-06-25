@@ -27,6 +27,8 @@ ____________________________
 - Instruction to use data_processing via Spyder | [GO](#clipboard-instruction-to-use-data_processing-via-spyder)
 - Instruction to use data_processing via Jupyter Notebook | [GO](#clipboard-instruction-to-use-data_processing-via-jupyter-notebook)
 - Instruction to use data_processing via JupyterLab | [GO](#clipboard-instruction-to-use-data_processing-via-jupyterlab)
+- Script guidelines | [GO](#script-guidelines)
+    - Data_processing.process_and_stats | [GO](#data_processingprocess_and_stats)
 - Contact | [GO](#contact)
 ____________________________
 
