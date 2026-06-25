@@ -117,7 +117,7 @@ This script is built up in Python. You can execute this script in Python with **
 #### Installing Jupyter using Anaconda and Conda
 1. Download [Anaconda](https://www.anaconda.com/download). We recommend downloading Anaconda’s latest Python 3 version (currently Python 3.9).
 2. Install the version of Anaconda which you downloaded, following the instructions on the download page.
-3. Run the notebook using Command Prompt (Windows/Mac) or Anaconda Prompt - [Run script with Jupyter Notebook](#clipboard-instruction-to-use-data_processing-via-jupyter-notebook).
+3. Run the notebook using Command Prompt (Windows/Mac) or Anaconda Prompt - [Run script with Jupyter Notebook](#clipboard-instruction-for-use-data_processing-via-jupyter-notebook).
 
 #### Installing Jupyter with pip
 As an exisiting Python user, you can install Jupyter using Python's pacakgae manager pip, instead of Anaconda. 
@@ -159,7 +159,7 @@ ____________________________
 1. Download .zip code. Last version: `v1.0.0`. [Download release]([https://github.com/](https://github.com/drmartinezrabert/data_processing/archive/refs/tags/v1.0.0.zip)).
 2. Extract files to a destination (Recommendation - Desktop).
 3. Open extracted files and copy data  to be processed (format `.csv`) into Folder `data_processing-1.0.0/data/`.
-4. Execute script via Spyder (see [Instruction to use data_processing via Spyder](#clipboard-instructions-to-use-data_processing-via-spyder) section), Jupyter Notebook (see [Instruction to use data_processing via Jupyter Notebook](#clipboard-instructions-to-use-data_processing-via-jupyter-notebook) section) or JupyterLab (see [Instruction to use data_processing via JupyterLab](#clipboard-instructions-to-use-data_processing-via-jupyterlab) section).
+4. Execute script via Spyder (see [Instruction to use data_processing via Spyder](#clipboard-instructions-for-use-data_processing-via-spyder) section), Jupyter Notebook (see [Instruction to use data_processing via Jupyter Notebook](#clipboard-instructions-for-use-data_processing-via-jupyter-notebook) section) or JupyterLab (see [Instruction to use data_processing via JupyterLab](#clipboard-instructions-for-use-data_processing-via-jupyterlab) section).
 
 ### Data formating instructions
 The script `data_processing` only reads files in `.csv` format. In it, some column names are required:
