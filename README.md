@@ -29,9 +29,9 @@ ____________________________
     - Data formating instructions | [GO](#data-formating-instructions)
 
 · **Instruction for use:**
-- Via Spyder | [GO](#clipboard-instruction-for-use-data_processing-via-spyder)
-- Via Jupyter Notebook | [GO](#clipboard-instruction-for-use-data_processing-via-jupyter-notebook)
-- Via JupyterLab | [GO](#clipboard-instruction-for-use-data_processing-via-jupyterlab)
+- With Spyder | [GO](#clipboard-instruction-for-use-data_processing-via-spyder)
+- With Jupyter Notebook | [GO](#clipboard-instruction-for-use-data_processing-via-jupyter-notebook)
+- With JupyterLab | [GO](#clipboard-instruction-for-use-data_processing-via-jupyterlab)
 - Script guidelines | [GO](#script-guidelines)
     - Data_processing.process_and_stats | [GO](#data_processingprocess_and_stats)
 
@@ -159,7 +159,7 @@ ____________________________
 1. Download .zip code. Last version: `v1.0.0`. [Download release]([https://github.com/](https://github.com/drmartinezrabert/data_processing/archive/refs/tags/v1.0.0.zip)).
 2. Extract files to a destination (Recommendation - Desktop).
 3. Open extracted files and copy data  to be processed (format `.csv`) into Folder `data_processing-1.0.0/data/`.
-4. Execute script via Spyder (see [Instruction to use data_processing via Spyder](#clipboard-instructions-for-use-data_processing-via-spyder) section), Jupyter Notebook (see [Instruction to use data_processing via Jupyter Notebook](#clipboard-instructions-for-use-data_processing-via-jupyter-notebook) section) or JupyterLab (see [Instruction to use data_processing via JupyterLab](#clipboard-instructions-for-use-data_processing-via-jupyterlab) section).
+4. Execute script via Spyder (see [Instruction to use data_processing via Spyder](#clipboard-instruction-for-use-data_processing-via-spyder) section), Jupyter Notebook (see [Instruction to use data_processing via Jupyter Notebook](#clipboard-instruction-for-use-data_processing-via-jupyter-notebook) section) or JupyterLab (see [Instruction to use data_processing via JupyterLab](#clipboard-instruction-for-use-data_processing-via-jupyterlab) section).
 
 ### Data formating instructions
 The script `data_processing` only reads files in `.csv` format. In it, some column names are required:
