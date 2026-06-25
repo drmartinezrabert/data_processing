@@ -272,7 +272,7 @@ Function to process and do statistics of data from Folder `data/`.<p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **legend_orientation : _str_, _optional, default: 'horizontal'_** <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Set orientation of legend ('horizontal' or 'vertical'). <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **xlim : _list_, _optional, default: [None, None]_** <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Set limits of x-axis with floats ([left limit, right limit]).<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **ylim_var1 : _list_, _optional, default: [0, 27]_** <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Set limits of primary y-axis (left axis) with floats ([bottom limit, top limit]).<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **ylim_var2 : _list_, _optional, default: [0, 13]_** <br>
