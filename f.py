@@ -25,7 +25,7 @@ class Data_processing:
     def process_and_stats(data_name, conditions, measurement_by_type, legend_labels, y_plus_texts, var1, var1_label, var1_colors, max_time = 9999,  
                           var2 = None, var2_label = None, var2_color = '#d2554a', show_legend = True, legend_orientation = 'horizontal', 
                           xlim = [None, None], ylim_var1 = [0, 27], ylim_var2 = [0, 13], ns_label = True, ns_label_fontsize = 9, save_fig = True,
-                          x_ticker_format = "{x:.1f}", stats_dark_vs_light = True, stats_coefficient_of_variation = False, CV_method = 'RSD', 
+                          x_ticker_format = "{x:.1f}", stats_dark_vs_light = False, stats_coefficient_of_variation = False, CV_method = 'RSD', 
                           significant_difference_times = False, significant_difference_t0 = False, show_icon = False):
         """
         Function to process and do statistics of data from Folder `data/`.
@@ -83,7 +83,7 @@ class Data_processing:
         x_ticker_format : STR, optional
             Set x-ticker format. The default is "{x:.1f}".
         stats_dark_vs_light : BOOL, optional
-            Run stastics comparing dark vs light conditions and save them in an Excel (Folder `results/`. The default is True.
+            Run stastics comparing dark vs light conditions and save them in an Excel (Folder `results/`). The default is False.
         stats_coefficient_of_variation : BOOL, optional
             Calculate coefficient of variation of measurements and save them in an Excel (Folder `results/`). The default is False.
         CV_method : STR, optional
