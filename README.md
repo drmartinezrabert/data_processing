@@ -7,6 +7,7 @@ Script for data processing of measurement replicates (calculating average and st
 ____________________________
 
 ## README Contents
+· **Setup PC:**
 - Before having fun with **Anaconda/Spyder**... | [GO](#before-having-fun-with-anacondaspyder)
     - Anaconda Python installation | [GO](#gear-anaconda-python-installation)
     - Anaconda Navigator | [GO](#anaconda-navigator)
@@ -22,13 +23,19 @@ ____________________________
 - Before having fun with **JupyterLab**... | [GO](#before-having-fun-with-jupyterlab)
     - JupyterLab installation | [GO](#gear-jupyterlab-installation)
         - Installing JupyterLab with pip | [GO](#installing-jupyterlab-with-pip)
+
+· **Dowloading and data formating:**
 - Instructions for downloading and setting up data_processing script | [GO](#clipboard-instructions-for-downloading-and-setting-up-data_processing-script)
     - Data formating instructions | [GO](#data-formating-instructions)
-- Instruction to use data_processing via Spyder | [GO](#clipboard-instruction-to-use-data_processing-via-spyder)
-- Instruction to use data_processing via Jupyter Notebook | [GO](#clipboard-instruction-to-use-data_processing-via-jupyter-notebook)
-- Instruction to use data_processing via JupyterLab | [GO](#clipboard-instruction-to-use-data_processing-via-jupyterlab)
+
+· **Instruction for use:**
+- With Spyder | [GO](#clipboard-instruction-for-use-data_processing-via-spyder)
+- With Jupyter Notebook | [GO](#clipboard-instruction-for-use-data_processing-via-jupyter-notebook)
+- With JupyterLab | [GO](#clipboard-instruction-for-use-data_processing-via-jupyterlab)
 - Script guidelines | [GO](#script-guidelines)
     - Data_processing.process_and_stats | [GO](#data_processingprocess_and_stats)
+
+· **Contact**:
 - Contact | [GO](#contact)
 ____________________________
 
@@ -110,7 +117,7 @@ This script is built up in Python. You can execute this script in Python with **
 #### Installing Jupyter using Anaconda and Conda
 1. Download [Anaconda](https://www.anaconda.com/download). We recommend downloading Anaconda’s latest Python 3 version (currently Python 3.9).
 2. Install the version of Anaconda which you downloaded, following the instructions on the download page.
-3. Run the notebook using Command Prompt (Windows/Mac) or Anaconda Prompt - [Run script with Jupyter Notebook](#).
+3. Run the notebook using Command Prompt (Windows/Mac) or Anaconda Prompt - [Run script with Jupyter Notebook](#clipboard-instruction-for-use-data_processing-via-jupyter-notebook).
 
 #### Installing Jupyter with pip
 As an exisiting Python user, you can install Jupyter using Python's pacakgae manager pip, instead of Anaconda. 
@@ -149,10 +156,10 @@ pip3 install jupyterlab
 ____________________________
 
 ## :clipboard: Instructions for downloading and setting up data_processing script
-1. Download .zip code. Last version: `v1.0.0`. [Download release](https://github.com/).
+1. Download .zip code. Last version: `v1.0.0`. [Download release](https://github.com/drmartinezrabert/data_processing/archive/refs/tags/v1.0.0.zip).
 2. Extract files to a destination (Recommendation - Desktop).
 3. Open extracted files and copy data  to be processed (format `.csv`) into Folder `data_processing-1.0.0/data/`.
-4. Execute script via Spyder (see [Instruction to use data_processing via Spyder](#clipboard-instructions-to-use-data_processing-via-spyder) section), Jupyter Notebook (see [Instruction to use data_processing via Jupyter Notebook](#clipboard-instructions-to-use-data_processing-via-jupyter-notebook) section) or JupyterLab (see [Instruction to use data_processing via JupyterLab](#clipboard-instructions-to-use-data_processing-via-jupyterlab) section).
+4. Execute script via Spyder (see [Instruction to use data_processing via Spyder](#clipboard-instruction-for-use-data_processing-via-spyder) section), Jupyter Notebook (see [Instruction to use data_processing via Jupyter Notebook](#clipboard-instruction-for-use-data_processing-via-jupyter-notebook) section) or JupyterLab (see [Instruction to use data_processing via JupyterLab](#clipboard-instruction-for-use-data_processing-via-jupyterlab) section).
 
 ### Data formating instructions
 The script `data_processing` only reads files in `.csv` format. In it, some column names are required:
@@ -167,7 +174,7 @@ The script `data_processing` only reads files in `.csv` format. In it, some colu
 
 ____________________________
 
-## :clipboard: Instruction to use data_processing via Spyder
+## :clipboard: Instruction for use data_processing via Spyder
 1. Launch **Spyder**. For Spyder Tutorials, click [here](https://www.youtube.com/watch?v=E2Dap5SfXkI&list=PLPonohdiDqg9epClEcXoAPUiK0pN5eRoc&ab_channel=SpyderIDE).
 2. Set (at least) the following panes in Spyder (most are selected by default): `Files`, `Editor`, `IPython Console`, `Plots`, `Help`, `Historial`.
    From Spyder taskbar: <ins>V</ins>iew / Panes ▸.
@@ -180,7 +187,7 @@ ____________________________
 
 ____________________________
 
-## :clipboard: Instruction to use data_processing via Jupyter Notebook
+## :clipboard: Instruction for use data_processing via Jupyter Notebook
 1. Open **Anaconda Prompt** or **Command Prompt** of Windows/Mac.
 2. Go to the **Code folder<sup>2</sup>** using `cd` command (more info about [Using Terminal](https://docs.anaconda.com/ae-notebooks/user-guide/basic-tasks/apps/use-terminal/?highlight=Using%20Terminal)).
     &#09;<br><sup><sup>2</sup>Code folder: folder with `run_script_jupyter.ipynb` file (Folder: `data_processing-1.0.0`).</sup>
@@ -201,7 +208,7 @@ ____________________________
 
 ____________________________
 
-## :clipboard: Instruction to use data_processing via JupyterLab
+## :clipboard: Instruction for use data_processing via JupyterLab
 1. Open **Anaconda Prompt or Terminal**.
 2. Go to the **Code folder<sup>2</sup>** using `cd` command (more info about [Using Terminal](https://docs.anaconda.com/ae-notebooks/user-guide/basic-tasks/apps/use-terminal/?highlight=Using%20Terminal)).
     &#09;<br><sup><sup>2</sup>Code folder: folder with `run_script_jupyter.ipynb` file (Folder: `data_processing-1.0.0`). </sup>
