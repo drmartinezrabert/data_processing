@@ -7,6 +7,7 @@ Script for data processing of measurement replicates (calculating average and st
 ____________________________
 
 ## README Contents
+· **Setup PC:**
 - Before having fun with **Anaconda/Spyder**... | [GO](#before-having-fun-with-anacondaspyder)
     - Anaconda Python installation | [GO](#gear-anaconda-python-installation)
     - Anaconda Navigator | [GO](#anaconda-navigator)
@@ -22,13 +23,19 @@ ____________________________
 - Before having fun with **JupyterLab**... | [GO](#before-having-fun-with-jupyterlab)
     - JupyterLab installation | [GO](#gear-jupyterlab-installation)
         - Installing JupyterLab with pip | [GO](#installing-jupyterlab-with-pip)
+
+· **Dowloading script:**
 - Instructions for downloading and setting up data_processing script | [GO](#clipboard-instructions-for-downloading-and-setting-up-data_processing-script)
     - Data formating instructions | [GO](#data-formating-instructions)
+
+· **Instruction of use:**
 - Instruction to use data_processing via Spyder | [GO](#clipboard-instruction-to-use-data_processing-via-spyder)
 - Instruction to use data_processing via Jupyter Notebook | [GO](#clipboard-instruction-to-use-data_processing-via-jupyter-notebook)
 - Instruction to use data_processing via JupyterLab | [GO](#clipboard-instruction-to-use-data_processing-via-jupyterlab)
 - Script guidelines | [GO](#script-guidelines)
     - Data_processing.process_and_stats | [GO](#data_processingprocess_and_stats)
+
+· **Contact**:
 - Contact | [GO](#contact)
 ____________________________
 
