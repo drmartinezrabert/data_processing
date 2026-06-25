@@ -6,6 +6,12 @@ __pycache__/
 # C extensions
 *.so
 
+# Data & Results
+data/*.xlsx
+data/*.csv
+results/*.tiff
+results/*.xlsx
+
 # Distribution / packaging
 .Python
 build/
@@ -77,6 +83,7 @@ target/
 
 # Jupyter Notebook
 .ipynb_checkpoints
+.~*
 
 # IPython
 profile_default/
