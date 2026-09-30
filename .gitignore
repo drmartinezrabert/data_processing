@@ -8,7 +8,6 @@ __pycache__/
 
 # Data & Results
 data/*.xlsx
-data/*.csv
 results/*.tiff
 results/*.xlsx
 
