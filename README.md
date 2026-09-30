@@ -156,9 +156,9 @@ pip3 install jupyterlab
 ____________________________
 
 ## :clipboard: Instructions for downloading and setting up data_processing script
-1. Download .zip code. Last version: `v1.0.0`. [Download release](https://github.com/drmartinezrabert/data_processing/archive/refs/tags/v1.0.0.zip).
+1. Download .zip code. Last version: `v1.0.1`. [Download release](https://github.com/drmartinezrabert/data_processing/archive/refs/tags/v1.0.1.zip).
 2. Extract files to a destination (Recommendation - Desktop).
-3. Open extracted files and copy data  to be processed (format `.csv`) into Folder `data_processing-1.0.0/data/`.
+3. Open extracted files and copy data  to be processed (format `.csv`) into Folder `data_processing-1.0.1/data/`.
 4. Execute script via Spyder (see [Instruction to use data_processing via Spyder](#clipboard-instruction-for-use-data_processing-via-spyder) section), Jupyter Notebook (see [Instruction to use data_processing via Jupyter Notebook](#clipboard-instruction-for-use-data_processing-via-jupyter-notebook) section) or JupyterLab (see [Instruction to use data_processing via JupyterLab](#clipboard-instruction-for-use-data_processing-via-jupyterlab) section).
 
 ### Data formating instructions
@@ -179,7 +179,7 @@ ____________________________
 2. Set (at least) the following panes in Spyder (most are selected by default): `Files`, `Editor`, `IPython Console`, `Plots`, `Help`, `Historial`.
    From Spyder taskbar: <ins>V</ins>iew / Panes ▸.
 3. Go to the **Code folder<sup>2</sup>** using the `Files` pane and open `run_script_python.py` file.
-    &#09;<br><sup><sup>2</sup>Code folder: folder with `run_script_jupyter.ipynb` file (Folder: `data_processing-1.0.0`). </sup>
+    &#09;<br><sup><sup>2</sup>Code folder: folder with `run_script_jupyter.ipynb` file (Folder: `data_processing-1.0.1`). </sup>
 4. Modify arguments of script (see [Data_processing.process_and_stats](#data_processingprocess_and_stats)).
 5. Run `run_script_python.py` script with Ctrl + Intro, F5 or Play symbol of _Run toolbar_.
 
@@ -190,7 +190,7 @@ ____________________________
 ## :clipboard: Instruction for use data_processing via Jupyter Notebook
 1. Open **Anaconda Prompt** or **Command Prompt** of Windows/Mac.
 2. Go to the **Code folder<sup>2</sup>** using `cd` command (more info about [Using Terminal](https://docs.anaconda.com/ae-notebooks/user-guide/basic-tasks/apps/use-terminal/?highlight=Using%20Terminal)).
-    &#09;<br><sup><sup>2</sup>Code folder: folder with `run_script_jupyter.ipynb` file (Folder: `data_processing-1.0.0`).</sup>
+    &#09;<br><sup><sup>2</sup>Code folder: folder with `run_script_jupyter.ipynb` file (Folder: `data_processing-1.0.1`).</sup>
 3. Open **Jupyter Notebook** with the command line:
    · Command Prompt (Windows):
    ```
@@ -211,7 +211,7 @@ ____________________________
 ## :clipboard: Instruction for use data_processing via JupyterLab
 1. Open **Anaconda Prompt or Terminal**.
 2. Go to the **Code folder<sup>2</sup>** using `cd` command (more info about [Using Terminal](https://docs.anaconda.com/ae-notebooks/user-guide/basic-tasks/apps/use-terminal/?highlight=Using%20Terminal)).
-    &#09;<br><sup><sup>2</sup>Code folder: folder with `run_script_jupyter.ipynb` file (Folder: `data_processing-1.0.0`). </sup>
+    &#09;<br><sup><sup>2</sup>Code folder: folder with `run_script_jupyter.ipynb` file (Folder: `data_processing-1.0.1`). </sup>
 3. Open **JupyterLab** with the command line:
    · Command Prompt (Windows):
    ```
