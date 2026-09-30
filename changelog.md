@@ -15,7 +15,9 @@ All notable changes to this project will be documented in this file.
 
 ## [1.0.1] - 2026/09/30
 ### Added
-- changelog.md file.
+- `changelog.md` file.
+- README of data file 'MZS_O2.csv'.
 ### Changed
 - README file.
 - Column identifiers of pandas (based on new column names in .csv file).
+- Update 'MZS_O2.csv' file.
