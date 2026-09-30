@@ -156,9 +156,9 @@ pip3 install jupyterlab
 ____________________________
 
 ## :clipboard: Instructions for downloading and setting up data_processing script
-1. Download .zip code. Last version: `v1.0.0`. [Download release](https://github.com/drmartinezrabert/data_processing/archive/refs/tags/v1.0.0.zip).
+1. Download .zip code. Last version: `v1.0.1`. [Download release](https://github.com/drmartinezrabert/data_processing/archive/refs/tags/v1.0.1.zip).
 2. Extract files to a destination (Recommendation - Desktop).
-3. Open extracted files and copy data  to be processed (format `.csv`) into Folder `data_processing-1.0.0/data/`.
+3. Open extracted files and copy data  to be processed (format `.csv`) into Folder `data_processing-1.0.1/data/`.
 4. Execute script via Spyder (see [Instruction to use data_processing via Spyder](#clipboard-instruction-for-use-data_processing-via-spyder) section), Jupyter Notebook (see [Instruction to use data_processing via Jupyter Notebook](#clipboard-instruction-for-use-data_processing-via-jupyter-notebook) section) or JupyterLab (see [Instruction to use data_processing via JupyterLab](#clipboard-instruction-for-use-data_processing-via-jupyterlab) section).
 
 ### Data formating instructions
@@ -179,7 +179,7 @@ ____________________________
 2. Set (at least) the following panes in Spyder (most are selected by default): `Files`, `Editor`, `IPython Console`, `Plots`, `Help`, `Historial`.
    From Spyder taskbar: <ins>V</ins>iew / Panes ▸.
 3. Go to the **Code folder<sup>2</sup>** using the `Files` pane and open `run_script_python.py` file.
-    &#09;<br><sup><sup>2</sup>Code folder: folder with `run_script_jupyter.ipynb` file (Folder: `data_processing-1.0.0`). </sup>
+    &#09;<br><sup><sup>2</sup>Code folder: folder with `run_script_jupyter.ipynb` file (Folder: `data_processing-1.0.1`). </sup>
 4. Modify arguments of script (see [Data_processing.process_and_stats](#data_processingprocess_and_stats)).
 5. Run `run_script_python.py` script with Ctrl + Intro, F5 or Play symbol of _Run toolbar_.
 
@@ -190,7 +190,7 @@ ____________________________
 ## :clipboard: Instruction for use data_processing via Jupyter Notebook
 1. Open **Anaconda Prompt** or **Command Prompt** of Windows/Mac.
 2. Go to the **Code folder<sup>2</sup>** using `cd` command (more info about [Using Terminal](https://docs.anaconda.com/ae-notebooks/user-guide/basic-tasks/apps/use-terminal/?highlight=Using%20Terminal)).
-    &#09;<br><sup><sup>2</sup>Code folder: folder with `run_script_jupyter.ipynb` file (Folder: `data_processing-1.0.0`).</sup>
+    &#09;<br><sup><sup>2</sup>Code folder: folder with `run_script_jupyter.ipynb` file (Folder: `data_processing-1.0.1`).</sup>
 3. Open **Jupyter Notebook** with the command line:
    · Command Prompt (Windows):
    ```
@@ -211,7 +211,7 @@ ____________________________
 ## :clipboard: Instruction for use data_processing via JupyterLab
 1. Open **Anaconda Prompt or Terminal**.
 2. Go to the **Code folder<sup>2</sup>** using `cd` command (more info about [Using Terminal](https://docs.anaconda.com/ae-notebooks/user-guide/basic-tasks/apps/use-terminal/?highlight=Using%20Terminal)).
-    &#09;<br><sup><sup>2</sup>Code folder: folder with `run_script_jupyter.ipynb` file (Folder: `data_processing-1.0.0`). </sup>
+    &#09;<br><sup><sup>2</sup>Code folder: folder with `run_script_jupyter.ipynb` file (Folder: `data_processing-1.0.1`). </sup>
 3. Open **JupyterLab** with the command line:
    · Command Prompt (Windows):
    ```
@@ -245,10 +245,10 @@ Function to process and do statistics of data from Folder `data/`.<p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **data_name : _str_** <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Name of file with data to be processed (from Folder `data/`). Name of file without format (i.e., without `.csv`).<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **conditions : _list of str_** <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; List of conditions. These must coincide with the names given in the column 'Condition' of `{data_name}.csv`. For now, only 'Light' or 'Dark'.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; List of conditions. These must coincide with the names given in the column 'condition' of `{data_name}.csv`. For now, only 'Light' or 'Dark'.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **measurement_by_type : _dict_** <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Description of measurements taken for each sample type. Format: {'Sample type': ['Measurement name 1', 'Measurement name 2']}.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'Sample type' must coincide with the names given in the column 'Sample type' of `{data_name}.csv`.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'Sample type' must coincide with the names given in the column 'sample_type' of `{data_name}.csv`.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'Measurement name #' corresponds to the column(s) with the data of variable 1 of `{data_name}.csv`.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **var1 : _str_** <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Name of primary variable, corresponding to data defined in `measurement_by_type`.<br>
@@ -256,15 +256,15 @@ Function to process and do statistics of data from Folder `data/`.<p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Label of primary variable in primary y-axis of plot (left axis).<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **var1_colors : _dict_** <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Plotting colors (HEX code) of primary variable. Format: {'Sample type': ['Color 1', 'Color 2']}.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'Sample type' must coincide with the names given in the column 'Sample type' of `{data_name}.csv`.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'Sample type' must coincide with the names given in the column 'sample_type' of `{data_name}.csv`.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Color list must have the same length as measurements defined in `measurement_by_type`.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **legend_labels : _dict_** <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Label of measurements in plot legend. Format: {'Sample type': ['Label name 1', 'Label name 2']}.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'Sample type' must coincide with the names given in the column 'Sample type' of `{data_name}.csv`.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'Sample type' must coincide with the names given in the column 'sample_type' of `{data_name}.csv`.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Label list must have the same length as measurements defined in `measurement_by_type`.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **y_plus_texts : _dict_** <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Position of stastics labels over the top of plots. Format: {'Sample type': [1.08, 1.02]}.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'Sample type' must coincide with the names given in the column 'Sample type' of `{data_name}.csv`.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'Sample type' must coincide with the names given in the column 'sample_type' of `{data_name}.csv`.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Position list must have the same length as measurements defined in `measurement_by_type`.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **max_time : _int_ or _float_, _optional, default: 9999_** <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Maximum measurement time considered for processing.<br>

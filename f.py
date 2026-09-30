@@ -25,8 +25,8 @@ class Data_processing:
     def process_and_stats(data_name, conditions, measurement_by_type, legend_labels, y_plus_texts, var1, var1_label, var1_colors, max_time = 9999,  
                           var2 = None, var2_label = None, var2_color = '#d2554a', show_legend = True, legend_orientation = 'horizontal', 
                           xlim = [None, None], ylim_var1 = [0, 27], ylim_var2 = [0, 13], ns_label = True, ns_label_fontsize = 9, save_fig = True,
-                          x_ticker_format = "{x:.1f}", stats_dark_vs_light = False, stats_coefficient_of_variation = False, CV_method = 'RSD', 
-                          significant_difference_times = False, significant_difference_t0 = False, show_icon = False):
+                          x_ticker_format = "{x:.1f}", stats_dark_vs_light = True, stats_coefficient_of_variation = False, CV_method = 'RSD', 
+                          significant_difference_times = False, significant_difference_t0 = False):
         """
         Function to process and do statistics of data from Folder `data/`.
 
@@ -35,10 +35,10 @@ class Data_processing:
         data_name : STR
             Name of file with data to be processed (from Folder `data/`). Name of file without format (i.e., without `.csv`).
         conditions : LIST of STR
-            List of conditions. These must coincide with the names given in the column 'Condition' of `{data_name}.csv`.
+            List of conditions. These must coincide with the names given in the column 'condition' of `{data_name}.csv`.
         measurement_by_type : DICT
             Description of measurements taken for each sample type. Format: {'Sample type': ['Measurement name 1', 'Measurement name 2']}.
-            'Sample type' must coincide with the names given in the column 'Sample type' of `{data_name}.csv`.
+            'Sample type' must coincide with the names given in the column 'sample_type' of `{data_name}.csv`.
             'Measurement name #' corresponds to the column(s) with the data of variable 1 of `{data_name}.csv`.
         var1 : STR
             Name of primary variable, corresponding to data defined in `measurement_by_type`.
@@ -46,15 +46,15 @@ class Data_processing:
             Label of primary variable in primary y-axis of plot (left axis).
         var1_colors : DICT
             Plotting colors of primary variable. Format: {'Sample type': ['Color 1', 'Color 2']}.
-            'Sample type' must coincide with the names given in the column 'Sample type' of `{data_name}.csv`.
+            'Sample type' must coincide with the names given in the column 'sample_type' of `{data_name}.csv`.
             Color list must have the same length as measurements defined in `measurement_by_type`.
         legend_labels : DICT
             Label of measurements in plot legend. Format: {'Sample type': ['Label name 1', 'Label name 2']}.
-            'Sample type' must coincide with the names given in the column 'Sample type' of `{data_name}.csv`.
+            'Sample type' must coincide with the names given in the column 'sample_type' of `{data_name}.csv`.
             Label list must have the same length as measurements defined in `measurement_by_type`. 
         y_plus_texts : DICT
             Position of stastics labels over the top of plots. Format: {'Sample type': [1.08, 1.02]}.
-            'Sample type' must coincide with the names given in the column 'Sample type' of `{data_name}.csv`.
+            'Sample type' must coincide with the names given in the column 'sample_type' of `{data_name}.csv`.
             Position list must have the same length as measurements defined in `measurement_by_type`. 
         max_time : FLOAT, optional
             Maximum measurement time considered for processing. The default is 9999.
@@ -83,7 +83,7 @@ class Data_processing:
         x_ticker_format : STR, optional
             Set x-ticker format. The default is "{x:.1f}".
         stats_dark_vs_light : BOOL, optional
-            Run stastics comparing dark vs light conditions and save them in an Excel (Folder `results/`). The default is False.
+            Run stastics comparing dark vs light conditions and save them in an Excel (Folder `results/`. The default is True.
         stats_coefficient_of_variation : BOOL, optional
             Calculate coefficient of variation of measurements and save them in an Excel (Folder `results/`). The default is False.
         CV_method : STR, optional
@@ -94,8 +94,6 @@ class Data_processing:
             Calculate and show in plot significant differences between t_n and t_n+1. The default is False.
         significant_difference_t0 : BOOL, optional
             Calculate and show in plot significant differences between t_0 and t_n. The default is False.
-        show_icon : BOOL, optional
-            Set wheteher icons are shown in right-top of plots. The default is False.
 
         Returns
         -------
@@ -104,7 +102,7 @@ class Data_processing:
 
         """
         data = pd.read_csv(f'{Data_processing.path_data}{data_name}.csv')
-        data_IDs = data['ID'].unique()
+        data_IDs = data['sample_id'].unique()
         if significant_difference_times and significant_difference_t0:
             raise ValueError('Choose one of significant difference method: significant difference between t_n and t_n+1 (`significant_difference_times = True`) or between t_0 and t_n (`significant_difference_t0 = True`).')
         if stats_dark_vs_light:
@@ -148,14 +146,14 @@ class Data_processing:
                                           index = False, header = False)
                 sRow_CV += 1
             for condition in conditions:
-                iData = data[(data['ID'] == sample_id) & (data['Condition'] == condition) & (data['Time'] <= max_time)]
+                iData = data[(data['sample_id'] == sample_id) & (data['condition'] == condition) & (data['elapsed_time'] <= max_time)]
                 if iData.empty:
                     continue
-                iType = iData['Sample type'].unique()[0]
+                iType = iData['sample_type'].unique()[0]
                 if isinstance(var2, str):
-                    var2_ = iData.groupby('Time')[var2].mean()
-                x = iData['Time'].unique()
-                descr = iData.groupby('Time')[measurement_by_type[iType]].describe()
+                    var2_ = iData.groupby('elapsed_time')[var2].mean()
+                x = iData['elapsed_time'].unique()
+                descr = iData.groupby('elapsed_time')[measurement_by_type[iType]].describe()
                 if stats_coefficient_of_variation:
                     for id_meas, meas in enumerate(measurement_by_type[iType]):
                         CV_site = legend_labels[iType][id_meas]
@@ -176,15 +174,15 @@ class Data_processing:
                 if significant_difference_times:
                     pval_time_diff = np.empty((len(measurement_by_type[iType]), len(x)), dtype = '<U10')
                     for id_site, site in enumerate(measurement_by_type[iType]):
-                        site_data = iData[['Time', 'Replicate', site]]
-                        site_data_times = site_data['Time'].unique()
+                        site_data = iData[['elapsed_time', 'replicate', site]]
+                        site_data_times = site_data['elapsed_time'].unique()
                         pval_time_diff_ = ['ns']
                         for id_time, time in enumerate(site_data_times):
                             if id_time > 0:
                                 t1 = site_data_times[id_time-1]
                                 t2 = site_data_times[id_time]
-                                site_data_t1 = np.array(site_data[site_data['Time'] == t1][site].values, dtype='d')
-                                site_data_t2 = np.array(site_data[site_data['Time'] == t2][site].values, dtype='d')
+                                site_data_t1 = np.array(site_data[site_data['elapsed_time'] == t1][site].values, dtype='d')
+                                site_data_t2 = np.array(site_data[site_data['elapsed_time'] == t2][site].values, dtype='d')
                                 _, pvalue = stats.ttest_ind(site_data_t1, site_data_t2, nan_policy = 'omit')
                                 if pvalue > 0.05:
                                     pvalue = ['ns']
@@ -200,15 +198,15 @@ class Data_processing:
                 if significant_difference_t0:
                     pval_time_diff_t0 = np.empty((len(measurement_by_type[iType]), len(x)), dtype = '<U10')
                     for id_site, site in enumerate(measurement_by_type[iType]):
-                        site_data = iData[['Time', 'Replicate', site]]
-                        site_data_times = site_data['Time'].unique()
+                        site_data = iData[['elapsed_time', 'replicate', site]]
+                        site_data_times = site_data['elapsed_time'].unique()
                         pval_time_diff_t0_ = ['ns']
                         t1 = site_data_times[0]
                         for id_time, time in enumerate(site_data_times):
                             if id_time > 0:
                                 t2 = site_data_times[id_time]
-                                site_data_t1 = np.array(site_data[site_data['Time'] == t1][site].values, dtype='d')
-                                site_data_t2 = np.array(site_data[site_data['Time'] == t2][site].values, dtype='d')
+                                site_data_t1 = np.array(site_data[site_data['elapsed_time'] == t1][site].values, dtype='d')
+                                site_data_t2 = np.array(site_data[site_data['elapsed_time'] == t2][site].values, dtype='d')
                                 _, pvalue = stats.ttest_ind(site_data_t1, site_data_t2, nan_policy = 'omit')
                                 if pvalue > 0.05:
                                     pvalue = ['ns']
@@ -225,13 +223,12 @@ class Data_processing:
                 count = int(descr[measurement_by_type[iType][0]]['count'].unique()[0])
                 title = f'{sample_id} ({iType}) | n = {count}'
                 full_path_figsave = Data_processing.path_save + f'{sample_id}_{condition}_{iType}.tiff'
-                if show_icon:
-                    if condition == 'Light':
-                        icon = mpimg.imread('data/light_icon.png')
-                        zoom = 0.060
-                    elif condition == 'Dark':
-                        icon = mpimg.imread('data/dark_icon.png')
-                        zoom = 0.085
+                if condition == 'Light':
+                    icon = mpimg.imread('data/light_icon.png')
+                    zoom = 0.060
+                elif condition == 'Dark':
+                    icon = mpimg.imread('data/dark_icon.png')
+                    zoom = 0.085
                 #-Plotting
                 x_formatter = ticker.StrMethodFormatter(x_ticker_format)
                 fig, ax1 = plt.subplots()
@@ -256,14 +253,13 @@ class Data_processing:
                             if not id_time == 0:
                                 ax1.text(time, ylim_var1[1]*y_plus_text[id_meas], pval_array[id_time], ha = 'center', 
                                          fontfamily = 'Arial', c = var1_colors[iType][id_meas], weight = 650, fontsize = ns_label_fontsize)
-                if show_icon:
-                    imagebox = OffsetImage(icon, zoom = zoom)
-                    if not xlim[1]:
-                        x_icon = max(x)*0.98
-                    else:
-                        x_icon = xlim[1]*0.93
-                    ab = AnnotationBbox(imagebox, (x_icon, ylim_var1[1]*0.91), frameon = False)
-                    ax1.add_artist(ab)
+                imagebox = OffsetImage(icon, zoom = zoom)
+                if not xlim[1]:
+                    x_icon = max(x)*0.98
+                else:
+                    x_icon = xlim[1]*0.93
+                ab = AnnotationBbox(imagebox, (x_icon, ylim_var1[1]*0.91), frameon = False)
+                ax1.add_artist(ab)
                 if significant_difference_times or significant_difference_t0:
                     plt.title(title, y = y_plus_text[0]*1.04, weight = 650)
                 else:
@@ -282,7 +278,7 @@ class Data_processing:
                     ax2.set_ylim(bottom = ylim_var2[0], top = ylim_var2[1])
                     ax2.yaxis.set_major_formatter(x_formatter)
                     ax2.minorticks_on()
-                    legend += [var2]
+                    legend += [var2_label[:var2_label.find(' (')]]
                 if show_legend:
                     if legend_orientation == 'vertical':
                         fig.legend(legend, bbox_to_anchor = (1.27, 0.6))
@@ -294,14 +290,14 @@ class Data_processing:
             sRow_CV += 1
             if stats_dark_vs_light:
                 # Difference between light and night
-                lightData = data[(data['ID'] == sample_id) & (data['Condition'] == 'Light')]
-                darkData = data[(data['ID'] == sample_id) & (data['Condition'] == 'Dark')]
+                lightData = data[(data['sample_id'] == sample_id) & (data['condition'] == 'Light')]
+                darkData = data[(data['sample_id'] == sample_id) & (data['condition'] == 'Dark')]
                 if lightData.empty or darkData.empty:
                     continue
                 else:
-                    iType = lightData['Sample type'].unique()[0]
-                    light_times = lightData['Time'].unique()
-                    dark_times = darkData['Time'].unique()
+                    iType = lightData['sample_type'].unique()[0]
+                    light_times = lightData['elapsed_time'].unique()
+                    dark_times = darkData['elapsed_time'].unique()
                     measurement_sites = measurement_by_type[iType]
                     # Write Excel
                     sample_array = pd.DataFrame(np.array([sample_id]))
@@ -322,8 +318,8 @@ class Data_processing:
                                                  startcol = 1, index = False, header = False)
                     sRow += 3
                     for id_site, site in enumerate(measurement_sites):
-                        lData = lightData[['Time', 'Replicate', site]]
-                        dData = darkData[['Time', 'Replicate',  site]]
+                        lData = lightData[['elapsed_time', 'replicate', site]]
+                        dData = darkData[['elapsed_time', 'replicate',  site]]
                         pval = []
                         abs_diff = []
                         if len(light_times) <= len(dark_times):
@@ -339,8 +335,8 @@ class Data_processing:
                             else:
                                 l_time = light_times[id_time]
                                 d_time = time
-                            lData_t = lData[lData['Time'] == l_time][site].values
-                            dData_t = dData[dData['Time'] == d_time][site].values
+                            lData_t = lData[lData['elapsed_time'] == l_time][site].values
+                            dData_t = dData[dData['elapsed_time'] == d_time][site].values
                             _, pvalue = stats.ttest_ind(lData_t, dData_t)
                             pval += [pvalue]
                             abs_diff += [abs(np.average(lData_t) - np.average(dData_t))]
