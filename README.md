@@ -245,10 +245,10 @@ Function to process and do statistics of data from Folder `data/`.<p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **data_name : _str_** <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Name of file with data to be processed (from Folder `data/`). Name of file without format (i.e., without `.csv`).<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **conditions : _list of str_** <br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; List of conditions. These must coincide with the names given in the column 'Condition' of `{data_name}.csv`. For now, only 'Light' or 'Dark'.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; List of conditions. These must coincide with the names given in the column 'condition' of `{data_name}.csv`. For now, only 'Light' or 'Dark'.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **measurement_by_type : _dict_** <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Description of measurements taken for each sample type. Format: {'Sample type': ['Measurement name 1', 'Measurement name 2']}.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'Sample type' must coincide with the names given in the column 'Sample type' of `{data_name}.csv`.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'Sample type' must coincide with the names given in the column 'sample_type' of `{data_name}.csv`.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'Measurement name #' corresponds to the column(s) with the data of variable 1 of `{data_name}.csv`.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **var1 : _str_** <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Name of primary variable, corresponding to data defined in `measurement_by_type`.<br>
@@ -256,15 +256,15 @@ Function to process and do statistics of data from Folder `data/`.<p>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Label of primary variable in primary y-axis of plot (left axis).<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **var1_colors : _dict_** <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Plotting colors (HEX code) of primary variable. Format: {'Sample type': ['Color 1', 'Color 2']}.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'Sample type' must coincide with the names given in the column 'Sample type' of `{data_name}.csv`.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'Sample type' must coincide with the names given in the column 'sample_type' of `{data_name}.csv`.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Color list must have the same length as measurements defined in `measurement_by_type`.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **legend_labels : _dict_** <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Label of measurements in plot legend. Format: {'Sample type': ['Label name 1', 'Label name 2']}.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'Sample type' must coincide with the names given in the column 'Sample type' of `{data_name}.csv`.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'Sample type' must coincide with the names given in the column 'sample_type' of `{data_name}.csv`.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Label list must have the same length as measurements defined in `measurement_by_type`.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **y_plus_texts : _dict_** <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Position of stastics labels over the top of plots. Format: {'Sample type': [1.08, 1.02]}.<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'Sample type' must coincide with the names given in the column 'Sample type' of `{data_name}.csv`.<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 'Sample type' must coincide with the names given in the column 'sample_type' of `{data_name}.csv`.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Position list must have the same length as measurements defined in `measurement_by_type`.<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; **max_time : _int_ or _float_, _optional, default: 9999_** <br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Maximum measurement time considered for processing.<br>
