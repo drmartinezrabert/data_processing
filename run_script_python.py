@@ -10,19 +10,17 @@ from f import Data_processing
 #-Data info
 data_name = 'MZS_O2'
 conditions = ['Light', 'Dark']
-measurement_by_type = {'ICE': ['Mean Mid'],
-                       'WATER': ['Mean Mid'],
-                       'CCO': ['Mean Top', 'Mean Mid', 'Mean Bot'],
-                       'DRY SOIL': ['Mean Mid', 'Mean Bot'],
-                       'WET SOIL': ['Mean Mid', 'Mean Bot']}
+measurement_by_type = {'ICE': ['o2_mid_mean'],
+                       'WATER': ['o2_mid_mean'],
+                       'CCO': ['o2_top_mean', 'o2_mid_mean', 'o2_bottom_mean'],
+                       'DRY SOIL': ['o2_mid_mean', 'o2_bottom_mean'],
+                       'WET SOIL': ['o2_mid_mean', 'o2_bottom_mean']}
 max_time = 5.5 # [h] | 5.5 or 999 (for full experiment)
 var1 = 'O2'
 var1_label = '[Oxygen] (%)' 
-var2 = 'Temperature'
+var2 = 'sample_temperature'
 var2_label = 'Temperature (°C)'
 #-Plotting properties
-## Show icons
-show_icon = True
 ## Plotting colors
 var1_colors = {'ICE': ['#4499AD'],
                'WATER': ['#4499AD'],
@@ -30,21 +28,20 @@ var1_colors = {'ICE': ['#4499AD'],
                'DRY SOIL': ['#4499AD', '#2A4B42'],
                'WET SOIL': ['#4499AD', '#2A4B42']}
 var2_color = '#d2554a'
-## Legend properties
+## Legend labels
 legend_labels = {'ICE': ['Water'],
                  'WATER': ['Water'],
                  'CCO': ['Water', 'Interface', 'Cryoconite'],
                  'DRY SOIL': ['Air', 'Soil'],
                  'WET SOIL': ['Air', 'Soil']}
-show_legend = True
-legend_orientation = 'horizontal'
 ## Position of statistics labels ('ns', '*', '**', '***')
 y_plus_texts = {'ICE': [1.02],
                 'WATER': [1.02],
                 'CCO': [1.14, 1.08, 1.02],
                 'DRY SOIL': [1.08, 1.02],
                 'WET SOIL': [1.08, 1.02]}
-## Save figures in .tiff format
+show_legend = True
+legend_orientation = 'horizontal'
 save_fig = False
 ## Set limits of x-coordinates
 xlim = [-0.2, 5.7] # [-0.2, 5.7] or [None, None] (for full experiment)
@@ -58,7 +55,7 @@ ns_label_fontsize = 9
 stats_dark_vs_light = True
 stats_coefficient_of_variation = True
 significant_difference_times = False
-significant_difference_t0 = False
+significant_difference_t0 = True
 CV_method = 'RSD' # 'RSD' or 'QCD' | RSD - Relative Standard deviaiton; QCD - Quartile coefficient of dispersion
 
 #-Execute function
@@ -87,5 +84,4 @@ Data_processing.process_and_stats(data_name = data_name,
                                   stats_coefficient_of_variation = stats_coefficient_of_variation, 
                                   CV_method = CV_method, 
                                   significant_difference_times = significant_difference_times,
-                                  significant_difference_t0 = significant_difference_t0,
-                                  show_icon = show_icon)
+                                  significant_difference_t0 = significant_difference_t0)
